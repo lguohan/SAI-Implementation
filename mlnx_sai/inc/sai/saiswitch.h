@@ -546,11 +546,15 @@ typedef enum _sai_switch_attr_t
     /* Enable vendor specific switch shell [bool] (default to false) */
     SAI_SWITCH_ATTR_SWITCH_SHELL_ENABLE,
 
+    SAI_SWITCH_ATTR_PORT_BREAKOUT,
+
+    
+
     /* -- */
     SAI_SWITCH_ATTR_END,
 
     /* Custom range base value */
-    SAI_SWITCH_ATTR_CUSTOM_RANGE_START = 0x10000000,
+    SAI_SWITCH_ATTR_CUSTOM_RANGE_BASE = 0x10000000,
 
     /* --*/
     SAI_SWITCH_ATTR_CUSTOM_RANGE_END

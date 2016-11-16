@@ -506,46 +506,7 @@ sai_status_t mlnx_queue_cfg_lookup(sx_port_log_id_t log_port_id, uint32_t queue_
     return SAI_STATUS_INVALID_PARAMETER;
 }
 
-/**
- * Routine Description:
- *    @brief Create queue
- *
- * Arguments:
- *    @param[out] queue_id - queue id
- *    @param[in] attr_count - number of attributes
- *    @param[in] attr_list - array of attributes
- *
- * Return Values:
- *    @return SAI_STATUS_SUCCESS on success
- *            Failure status code on error
- *
- */
-sai_status_t mlnx_create_queue(_Out_ sai_object_id_t     * queue_id,
-                               _In_ uint32_t               attr_count,
-                               _In_ const sai_attribute_t *attr_list)
-{
-    return SAI_STATUS_NOT_IMPLEMENTED;
-}
-
-/**
- * Routine Description:
- *    @brief Remove queue
- *
- * Arguments:
- *    @param[in] queue_id - queue id
- *
- * Return Values:
- *    @return SAI_STATUS_SUCCESS on success
- *            Failure status code on error
- */
-sai_status_t mlnx_remove_queue(_In_ sai_object_id_t queue_id)
-{
-    return SAI_STATUS_NOT_IMPLEMENTED;
-}
-
 const sai_queue_api_t mlnx_queue_api = {
-    mlnx_create_queue,
-    mlnx_remove_queue,
     mlnx_set_queue_attribute,
     mlnx_get_queue_attribute,
     mlnx_get_queue_statistics,

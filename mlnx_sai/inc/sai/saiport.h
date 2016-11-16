@@ -187,25 +187,6 @@ typedef enum _sai_port_media_type_t
 } sai_port_media_type_t;
 
 /**
- * @brief Breakout Mode types based on number
- * of SerDes lanes used in a port
- */
-typedef enum _sai_port_breakout_mode_type_t
-{
-    /** 1 lane breakout Mode */
-    SAI_PORT_BREAKOUT_MODE_1_LANE = 1,
-
-    /** 2 lanes breakout Mode */
-    SAI_PORT_BREAKOUT_MODE_2_LANE = 2,
-
-    /** 4 lanes breakout Mode */
-    SAI_PORT_BREAKOUT_MODE_4_LANE = 4,
-
-    /** Breakout mode max count */
-    SAI_PORT_BREAKOUT_MODE_MAX
-} sai_port_breakout_mode_type_t;
-
-/**
  *  Attribute Id in sai_set_port_attribute() and
  *  sai_get_port_attribute() calls
  */
@@ -735,41 +716,6 @@ typedef enum _sai_port_stat_counter_t
 
 } sai_port_stat_counter_t;
 
-/**
- * Routine Description:
- *    @brief Create port
- *
- * Arguments:
- *    @param[out] port_id - port id
- *    @param[in] attr_count - number of attributes
- *    @param[in] attr_list - array of attributes
- *
- * Return Values:
- *    @return SAI_STATUS_SUCCESS on success
- *            Failure status code on error
- *
- */
-typedef sai_status_t (*sai_create_port_fn)(
-    _Out_ sai_object_id_t* port_id,
-    _In_ uint32_t attr_count,
-    _In_ const sai_attribute_t *attr_list
-    );
-
-/**
- * Routine Description:
- *    @brief Remove port
- *
- * Arguments:
- *    @param[in] port_id - port id
- *
- * Return Values:
- *    @return SAI_STATUS_SUCCESS on success
- *            Failure status code on error
- */
-typedef sai_status_t (*sai_remove_port_fn)(
-    _In_ sai_object_id_t port_id
-    );
-
 /* Routine Description:
  *   @brief Set port attribute value.
  *
@@ -897,8 +843,6 @@ typedef void (*sai_port_event_notification_fn)(
  */
 typedef struct _sai_port_api_t
 {
-    sai_create_port_fn              create_port;
-    sai_remove_port_fn              remove_port;
     sai_set_port_attribute_fn       set_port_attribute;
     sai_get_port_attribute_fn       get_port_attribute;
     sai_get_port_stats_fn           get_port_stats;
